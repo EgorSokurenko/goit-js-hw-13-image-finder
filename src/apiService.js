@@ -5,14 +5,16 @@ export default class newApiImg {
   }
   fetchImg() {
     const url = `https://pixabay.com/api/?image_type=photo&orientation=horizontal&q=${this.searchQuery}&page=${this.page}&per_page=12&key=23531683-f7bec5b5f56f02023e7381294`;
-    fetch(url)
+    return fetch(url)
       .then(res => res.json())
       .then(array => {
         console.log(this.page);
         this.page += 1;
         return array.hits;
       })
-      .then(console.log);
+  }
+  resetPage(){
+    this.page = 1
   }
   get query() {
     return this.searchQuery;
