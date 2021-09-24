@@ -11,4 +11,4 @@ var e,t=arguments[3];!function(t,r){"object"==typeof exports&&"object"==typeof m
 },{"handlebars/dist/handlebars.runtime":"pAws"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss");var e=n(require("./apiService")),t=n(require("./partials/block.hbs"));function n(e){return e&&e.__esModule?e:{default:e}}const r=document.querySelector("#search-form"),u=document.querySelector("#more-btn"),c=document.querySelector(".gallery");r.addEventListener("submit",i),u.addEventListener("click",s);const o=new e.default;function i(e){e.preventDefault(),l();let t=e.currentTarget.elements.query.value;o.query=t,o.resetPage(),o.fetchImg().then(e=>a(e))}function s(){o.fetchImg().then(e=>a(e))}function a(e){c.insertAdjacentHTML("beforeend",(0,t.default)(e)),setTimeout(d,1e3)}function l(){c.innerHTML=""}function d(){u.scrollIntoView({behavior:"smooth",block:"end"})}
 },{"./sass/main.scss":"clu1","./apiService":"WgT8","./partials/block.hbs":"SpSA"}]},{},["Focm"], null)
-//# sourceMappingURL=/goit-js-hw-13-image-finder/src.5b2a86d2.js.map
+//# sourceMappingURL=/goit-js-hw-13-image-finder/src.32b4a618.js.map
