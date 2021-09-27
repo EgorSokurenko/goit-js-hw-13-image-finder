@@ -1,53 +1,53 @@
-body{
+body {
   list-style: none;
 }
-.gallery{
+.gallery {
   margin: auto;
   display: flex;
   flex-wrap: wrap;
 }
-.gallery__block{
+.gallery__block {
   margin: 20px;
 }
-.photo-card{
+.photo-card {
   width: 500px;
   height: 700px;
   border: black solid 1px;
 }
-.gallery__img{
+.gallery__img {
   display: block;
   width: 100%;
   height: 500px;
 }
-.stats{
+.stats {
   padding-left: 10px;
 }
-.search-form{
-  display:flex;
+.search-form {
+  display: flex;
   margin-left: auto;
   margin-right: auto;
 }
 
-.search-form__input{
+.search-form__input {
   padding: 30px;
   flex: 30px;
   font-size: 30px;
 }
-.search-form__btn{
+.search-form__btn {
   width: 200px;
 }
-.more-btn{
+.more-btn {
   margin-top: 10px;
   margin-bottom: 10px;
   background-color: rgb(203, 248, 233);
   padding: 10px 20px 10px 20px;
   font-size: 20px;
-  display:flex;
+  display: flex;
   margin-left: auto;
   margin-right: auto;
 }
-.up-btn{
-  position:fixed;
+.up-btn {
+  position: fixed;
   right: 50px;
   bottom: 50px;
   margin-left: auto;
@@ -56,4 +56,7 @@ body{
   color: rgb(0, 0, 0);
   text-decoration: none;
   font-size: 30px;
+}
+.more-btn.is-hidden {
+  display: none;
 }

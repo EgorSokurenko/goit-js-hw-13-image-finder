@@ -16,15 +16,23 @@
     <!-- Так добавляются фрагменты в главные HTML-файлы страниц. -->
     <!-- <include src="./partials/example.html"></include> -->
     <form class="search-form" id="search-form">
-      <input class='search-form__input'type="text" name="query" autocomplete="off" placeholder="Search images..." />
-      <button class='search-form__btn' type="submit">Search</button>
+      <input
+        class="search-form__input"
+        type="text"
+        name="query"
+        autocomplete="off"
+        placeholder="Search images..."
+      />
+      <button class="search-form__btn" type="submit">Search</button>
     </form>
-    
+
     <ul class="gallery">
       <!-- Список <li> с карточками изображений -->
     </ul>
-    <button class='more-btn'id="more-btn" type="button">Load more</button>
-    <a href = '#search-form'class="up-btn">To up</a>
+    <button type="button" class="more-btn" id="more-btn" type="button">
+      <span class="label">Показать ещё</span>
+    </button>
+    <a href="#search-form" class="up-btn">To up</a>
     <!-- Скрипт идёт последним в разметке. В нём уже подключен главный SASS-файл. -->
     <script src="./index.js"></script>
   </body>
