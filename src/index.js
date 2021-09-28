@@ -1,3 +1,8 @@
+import { alert, error, defaultModules } from '@pnotify/core/dist/PNotify.js';
+import * as PNotifyMobile from '@pnotify/mobile/dist/PNotifyMobile.js';
+import '@pnotify/core/dist/PNotify.css';
+import '@pnotify/core/dist/BrightTheme.css';
+defaultModules.set(PNotifyMobile, {});
 import './sass/main.scss';
 import NewApiImg from './apiService';
 import LoadMoreBtn from './load-more-btn';
@@ -26,7 +31,15 @@ function onSearch(e) {
   apiImg
     .fetchImg()
     .then(images => {
-      loadMoreBtn.unable();
+      console.log(images);
+      if(images.length===0){
+        loadMoreBtn.hide()
+        error({ text: 'По запросу ничего не найдено', })
+      }else if(images.length>=12){
+        loadMoreBtn.unable();
+      }else{
+        loadMoreBtn.hide()
+      }
       appendImagesMarkup(images);
     })
     .catch(error => console.log);
@@ -43,7 +56,7 @@ function onLoadMore() {
 }
 function appendImagesMarkup(images) {
   listImg.insertAdjacentHTML('beforeend', blockImg(images));
-  setTimeout(scrollBtn, 1000);
+  scrollBtn()
 }
 function clearMarkup() {
   listImg.innerHTML = '';
@@ -51,6 +64,6 @@ function clearMarkup() {
 function scrollBtn() {
   listImg.scrollIntoView({
     behavior: 'smooth',
-    block: 'end',
+    block: 'end'
   });
 }
